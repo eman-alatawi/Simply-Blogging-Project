@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap");
+
+$background-color: rgb(242, 236, 249);
+$dark-purple: rgb(54, 5, 99);
+$light-purple: rgb(224, 201, 245);
+$cyne: rgb(93, 206, 254);
+$pink: rgba(228, 84, 175, 0.644);
+$height: 100vh;
+$width: 100vw;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background-color !important;
+  font-family: "Rajdhani", sans-serif !important;
+}
+
+@mixin flexContent($direction, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: center;
+}
+
+@mixin x-small-devices {
+  .header {
+    height: 80vh;
+
+    .navBar {
+      .nav-link,
+      .navbar-brand {
+        font-size: large;
+      }
+    }
+
+    .banner {
+      @include flexContent(column, space-around);
+    }
+  }
+}
+
+@mixin small-devices {
+  .header {
+    height: $height;
+
+    .navBar {
+      .nav-link,
+      .navbar-brand {
+        font-size: larger;
+      }
+    }
+
+    .banner {
+      @include flexContent(column, space-around);
+    }
+  }
+}
+
+@mixin medium-devices {
+  .header {
+    height: 80vh;
+
+    .navBar {
+      .nav-link,
+      .navbar-brand {
+        font-size: x-large;
+      }
+    }
+
+    .banner {
+    }
+  }
+}
+
+// styles for devices with => 1024px
+
+.header {
+  @include flexContent(column, space-between);
+
+  height: $height;
+  width: $width;
+  background-color: $dark-purple;
+  padding: 1rem 2rem;
+  text-align: left;
+
+  .navBar {
+    width: $width;
+    padding: 0 2rem;
+
+    button.navbar-toggler {
+      color: $pink;
+      background-color: $cyne;
+    }
+
+    .nav-link,
+    .navbar-brand {
+      color: $light-purple !important;
+      margin-right: 1.5rem;
+      font-size: x-large;
+
+      &:hover {
+        color: $cyne !important;
+      }
+    }
+  }
+
+  .banner {
+    @include flexContent(row, space-evenly);
+    color: $light-purple;
+
+    .Str {
+      font-size: xx-large;
+      color: $cyne;
+
+      span {
+        padding: 2rem;
+        color: $light-purple;
+        background-color: $pink;
+        border-radius: 100%;
+      }
+    }
+
+    sup {
+      color: $pink;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  @include x-small-devices();
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  @include small-devices();
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  @include medium-devices();
+}

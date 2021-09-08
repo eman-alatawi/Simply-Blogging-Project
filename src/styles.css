@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #f2ecf9 !important;
+  font-family: "Rajdhani", sans-serif !important;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #360563;
+  padding: 1rem 2rem;
+  text-align: left;
+}
+
+.header .navBar {
+  width: 100vw;
+  padding: 0 2rem;
+}
+
+.header .navBar button.navbar-toggler {
+  color: rgba(228, 84, 175, 0.644);
+  background-color: #5dcefe;
+}
+
+.header .navBar .nav-link,
+.header .navBar .navbar-brand {
+  color: #e0c9f5 !important;
+  margin-right: 1.5rem;
+  font-size: x-large;
+}
+
+.header .navBar .nav-link:hover,
+.header .navBar .navbar-brand:hover {
+  color: #5dcefe !important;
+}
+
+.header .banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #e0c9f5;
+}
+
+.header .banner .Str {
+  font-size: xx-large;
+  color: #5dcefe;
+}
+
+.header .banner .Str span {
+  padding: 2rem;
+  color: #e0c9f5;
+  background-color: rgba(228, 84, 175, 0.644);
+  border-radius: 100%;
+}
+
+.header .banner sup {
+  color: rgba(228, 84, 175, 0.644);
+}
+
+@media (max-width: 480px) {
+  .header {
+    height: 80vh;
+  }
+  .header .navBar .nav-link,
+  .header .navBar .navbar-brand {
+    font-size: large;
+  }
+  .header .banner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  .header {
+    height: 100vh;
+  }
+  .header .navBar .nav-link,
+  .header .navBar .navbar-brand {
+    font-size: larger;
+  }
+  .header .banner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    height: 80vh;
+  }
+  .header .navBar .nav-link,
+  .header .navBar .navbar-brand {
+    font-size: x-large;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
