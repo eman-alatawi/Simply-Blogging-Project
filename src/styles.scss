@@ -29,8 +29,7 @@ body {
     height: 80vh;
 
     .navBar {
-      .nav-link,
-      .navbar-brand {
+      .nav-link{
         font-size: large;
       }
     }
@@ -46,8 +45,7 @@ body {
     height: $height;
 
     .navBar {
-      .nav-link,
-      .navbar-brand {
+      .nav-link {
         font-size: larger;
       }
     }
@@ -63,8 +61,7 @@ body {
     height: 80vh;
 
     .navBar {
-      .nav-link,
-      .navbar-brand {
+      .nav-link {
         font-size: x-large;
       }
     }
@@ -77,8 +74,7 @@ body {
 // styles for devices with => 1024px
 
 .header {
-  @include flexContent(column, space-between);
-
+  @include flexContent(column, space-around);
   height: $height;
   width: $width;
   background-color: $dark-purple;
@@ -87,7 +83,6 @@ body {
 
   .navBar {
     width: $width;
-    padding: 0 2rem;
 
     button.navbar-toggler {
       color: $pink;
@@ -96,13 +91,20 @@ body {
 
     .nav-link,
     .navbar-brand {
-      color: $light-purple !important;
       margin-right: 1.5rem;
-      font-size: x-large;
 
       &:hover {
         color: $cyne !important;
       }
+    }
+
+    .nav-link{
+        color: $light-purple !important;
+        font-size: x-large;
+    }
+    .navbar-brand {
+        color: $pink !important;
+        font-size: xx-large;
     }
   }
 

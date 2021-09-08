@@ -17,9 +17,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -32,7 +31,6 @@ body {
 
 .header .navBar {
   width: 100vw;
-  padding: 0 2rem;
 }
 
 .header .navBar button.navbar-toggler {
@@ -42,14 +40,22 @@ body {
 
 .header .navBar .nav-link,
 .header .navBar .navbar-brand {
-  color: #e0c9f5 !important;
   margin-right: 1.5rem;
-  font-size: x-large;
 }
 
 .header .navBar .nav-link:hover,
 .header .navBar .navbar-brand:hover {
   color: #5dcefe !important;
+}
+
+.header .navBar .nav-link {
+  color: #e0c9f5 !important;
+  font-size: x-large;
+}
+
+.header .navBar .navbar-brand {
+  color: rgba(228, 84, 175, 0.644) !important;
+  font-size: xx-large;
 }
 
 .header .banner {
@@ -89,8 +95,7 @@ body {
   .header {
     height: 80vh;
   }
-  .header .navBar .nav-link,
-  .header .navBar .navbar-brand {
+  .header .navBar .nav-link {
     font-size: large;
   }
   .header .banner {
@@ -113,8 +118,7 @@ body {
   .header {
     height: 100vh;
   }
-  .header .navBar .nav-link,
-  .header .navBar .navbar-brand {
+  .header .navBar .nav-link {
     font-size: larger;
   }
   .header .banner {
@@ -137,8 +141,7 @@ body {
   .header {
     height: 80vh;
   }
-  .header .navBar .nav-link,
-  .header .navBar .navbar-brand {
+  .header .navBar .nav-link {
     font-size: x-large;
   }
 }
