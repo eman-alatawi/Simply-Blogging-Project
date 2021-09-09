@@ -29,13 +29,31 @@ body {
     height: 80vh;
 
     .navBar {
-      .nav-link{
+      .nav-link {
         font-size: large;
       }
     }
 
     .banner {
       @include flexContent(column, space-around);
+    }
+  }
+
+  .features-section {
+    height: 130vh;
+
+    .features-section-container {
+      @include flexContent(column, space-evenly);
+    }
+
+    .features-pictures-container {
+      margin: 1rem;
+
+      .row {
+        .fas {
+          font-size: 2rem;
+        }
+      }
     }
   }
 }
@@ -54,6 +72,24 @@ body {
       @include flexContent(column, space-around);
     }
   }
+
+  .features-section {
+    height: $height;
+
+    .features-section-container {
+      @include flexContent(column, space-evenly);
+    }
+
+    .features-pictures-container {
+      margin: 1rem;
+
+      .row {
+        .fas {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
 }
 
 @mixin medium-devices {
@@ -67,6 +103,12 @@ body {
     }
 
     .banner {
+    }
+  }
+
+  .features-section {
+    .feature-paragraph {
+      width: 80vw;
     }
   }
 }
@@ -98,13 +140,14 @@ body {
       }
     }
 
-    .nav-link{
-        color: $light-purple !important;
-        font-size: x-large;
+    .nav-link {
+      color: $light-purple !important;
+      font-size: x-large;
     }
+
     .navbar-brand {
-        color: $pink !important;
-        font-size: xx-large;
+      color: $pink !important;
+      font-size: xx-large;
     }
   }
 
@@ -127,6 +170,98 @@ body {
     sup {
       color: $pink;
     }
+  }
+}
+
+.features-section {
+  @include flexContent(column, space-around);
+
+  .feature-paragraph {
+    width: 60vw;
+    text-align: justify;
+  }
+
+  .features-section-container {
+    @include flexContent(row, space-around);
+  }
+
+  .features-pictures-container {
+    .row {
+      .dev {
+        background-color: $dark-purple;
+
+        .fas {
+          color: $light-purple;
+        }
+
+        h5 {
+          color: $light-purple;
+        }
+      }
+
+      .responsive {
+        background-color: $pink;
+      }
+
+      .skills {
+        background-color: $cyne;
+      }
+
+      .design {
+        background-color: $light-purple;
+      }
+
+      .skills,
+      .design,
+      .responsive {
+        .fas {
+          color: $dark-purple;
+        }
+
+        h5 {
+          color: $dark-purple;
+        }
+      }
+
+      .fas {
+        font-size: 3rem;
+      }
+
+      .col {
+        padding: 2rem;
+      }
+    }
+
+  }
+}
+
+// Footer.js
+.footer {
+  @include flexContent(row, center);
+  background-color: $dark-purple;
+  color: $light-purple;
+  padding: 2rem;
+
+  .footerContainer {
+    @include flexContent(column, center);
+    height: 10vh;
+  }
+
+  .iconsContainer {
+    @include flexContent(row, space-evenly);
+
+    .icon {
+      color: $light-purple;
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    font-size: smaller;
+  }
+
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    font-size: smaller;
   }
 }
 
