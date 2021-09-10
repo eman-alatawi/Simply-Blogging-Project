@@ -264,8 +264,10 @@ body {
 
 .news-section .news-section-container .striped-Box .container-fluid {
   width: 45vw;
+  height: 51vh;
+  overflow-y: scroll;
   background-color: #360563;
-  padding: 2rem;
+  padding: 1rem;
   z-index: 2;
 }
 
@@ -435,7 +437,6 @@ body {
   background-color: #360563;
   color: #e0c9f5;
   padding: 2rem;
-  z-index: 50;
 }
 
 .footer .footerContainer {
@@ -534,7 +535,7 @@ body {
     font-size: 2rem;
   }
   .news-section {
-    height: 80vh;
+    height: 110vh;
   }
   .news-section .news-section-container {
     display: -webkit-box;
@@ -683,7 +684,7 @@ body {
     font-size: large;
   }
   .news-section .news-section-container .striped-Box .container-fluid .card h4 {
-    font-size: larger;
+    font-size: large;
   }
   .newTip-section {
     display: -webkit-box;

@@ -126,14 +126,14 @@ body {
 @mixin x-small-devices {
   @include header-section(90vh, large, column, space-around);
   @include features-section(170vh);
-  @include news-section(80vh, larger, large, small);
+  @include news-section(110vh, larger, large, small);
   @include newTip-section(100%, 50%,large, medium, medium);
 }
 
 @mixin small-devices {
   @include header-section($height, larger, row, space-around);
   @include features-section(130vh);
-  @include news-section(130vh, x-large, larger, large);
+  @include news-section(130vh, x-large, large, large);
   @include newTip-section(100%, 80%, x-large, large, large);
 }
 
@@ -349,8 +349,10 @@ body {
 
       .container-fluid {
         width: 45vw;
+        height: 51vh;
+        overflow-y: scroll;
         background-color: $dark-purple;
-        padding: 2rem;
+        padding: 1rem;
         z-index: 2;
 
         .card-header-container {
@@ -452,7 +454,6 @@ body {
   background-color: $dark-purple;
   color: $light-purple;
   padding: 2rem;
-  z-index: 50;
 
   .footerContainer {
     @include flexContent(column, center);
