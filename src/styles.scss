@@ -24,13 +24,13 @@ body {
   align-items: center;
 }
 
-@mixin x-small-devices {
+@mixin header-section($section-height, $nav-link-size) {
   .header {
-    height: 80vh;
+    height: $section-height;
 
     .navBar {
       .nav-link {
-        font-size: large;
+        font-size: $nav-link-size;
       }
     }
 
@@ -38,7 +38,9 @@ body {
       @include flexContent(column, space-around);
     }
   }
+}
 
+@mixin features-section($section-height) {
   .features-section {
     height: 130vh;
 
@@ -58,38 +60,48 @@ body {
   }
 }
 
-@mixin small-devices {
-  .header {
-    height: $height;
+@mixin news-section($section-height, $card-header, $card-title, $card-text) {
+  .news-section {
+    height: $section-height;
 
-    .navBar {
-      .nav-link {
-        font-size: larger;
-      }
-    }
+    .news-section-container {
+      @include flexContent(column, space-between);
 
-    .banner {
-      @include flexContent(column, space-around);
-    }
-  }
+      .striped-Box {
+        .container-fluid {
+          width: 100%;
+          padding: 0;
 
-  .features-section {
-    height: $height;
+          .card-header-container {
+            h1,
+            i {
+              font-size: $card-header;
+            }
+          }
 
-    .features-section-container {
-      @include flexContent(column, space-evenly);
-    }
+          .card {
+            font-size: $card-text;
+          }
 
-    .features-pictures-container {
-      margin: 1rem;
-
-      .row {
-        .fas {
-          font-size: 2rem;
+          .card h4 {
+            font-size: $card-title;
+          }
         }
       }
     }
   }
+}
+
+@mixin x-small-devices {
+  @include header-section(80vh, large);
+  @include features-section(130vh);
+  @include news-section(80vh, larger, large, small);
+}
+
+@mixin small-devices {
+  @include header-section($height, larger);
+  @include features-section($height);
+  @include news-section($height, xx-large, x-large, large);
 }
 
 @mixin medium-devices {
@@ -100,9 +112,6 @@ body {
       .nav-link {
         font-size: x-large;
       }
-    }
-
-    .banner {
     }
   }
 
@@ -154,6 +163,21 @@ body {
   .banner {
     @include flexContent(row, space-evenly);
     color: $light-purple;
+
+    button {
+      border: 0;
+      background-color: $cyne;
+      border-radius: 3rem;
+      padding: 0.5rem 1rem;
+      color: whitesmoke;
+      position: relative;
+      right: -6rem;
+
+      &:hover {
+        background-color: $pink;
+        color: $light-purple;
+      }
+    }
 
     .Str {
       font-size: xx-large;
@@ -231,7 +255,72 @@ body {
         padding: 2rem;
       }
     }
+  }
+}
 
+.news-section {
+  height: 90vh;
+  background-color: $dark-purple;
+  @include flexContent(column, center);
+  padding: 2rem;
+
+  .news-section-container {
+    @include flexContent(row, space-evenly);
+    .image-Box {
+      padding: 1rem;
+
+      img {
+        box-shadow: 29px 35px 0px -2px rgb(228, 84, 175);
+        -webkit-box-shadow: 29px 35px 0px -2px rgb(228, 84, 175);
+        -moz-box-shadow: 29px 35px 0px -2px rgb(228, 84, 175);
+        z-index: 1;
+      }
+    }
+
+    .striped-Box {
+      padding: 1rem;
+      background: repeating-linear-gradient(
+        -55deg,
+        transparent,
+        transparent 20px,
+        $pink 40px,
+        $pink 40px
+      );
+
+      .container-fluid {
+        width: 45vw;
+        background-color: $dark-purple;
+        padding: 2rem;
+        z-index: 2;
+
+        .card-header-container {
+          @include flexContent(row, space-between);
+
+          i {
+            border: 0;
+            color: $cyne;
+
+            &:hover {
+              color: $light-purple;
+            }
+          }
+
+          h1 {
+            color: $cyne;
+          }
+        }
+
+        .card {
+          background: transparent;
+          color: $light-purple;
+          border: 0;
+
+          .cus-text-muted {
+            color: $pink;
+          }
+        }
+      }
+    }
   }
 }
 
