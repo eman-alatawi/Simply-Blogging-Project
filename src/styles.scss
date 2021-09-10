@@ -24,7 +24,7 @@ body {
   align-items: center;
 }
 
-@mixin header-section($section-height, $nav-link-size) {
+@mixin header-section($section-height, $nav-link-size, $dir, $justify) {
   .header {
     height: $section-height;
 
@@ -35,14 +35,14 @@ body {
     }
 
     .banner {
-      @include flexContent(column, space-around);
+      @include flexContent($dir, $justify);
     }
   }
 }
 
 @mixin features-section($section-height) {
   .features-section {
-    height: 130vh;
+    height: $section-height;
 
     .features-section-container {
       @include flexContent(column, space-evenly);
@@ -93,20 +93,20 @@ body {
 }
 
 @mixin x-small-devices {
-  @include header-section(80vh, large);
-  @include features-section(130vh);
+  @include header-section(90vh, large, column, space-around);
+  @include features-section(170vh);
   @include news-section(80vh, larger, large, small);
 }
 
 @mixin small-devices {
-  @include header-section($height, larger);
-  @include features-section($height);
-  @include news-section($height, xx-large, x-large, large);
+  @include header-section($height, larger, row,space-around );
+  @include features-section(130vh);
+  @include news-section(130vh, x-large, larger, large);
 }
 
 @mixin medium-devices {
   .header {
-    height: 80vh;
+    height: 100vh;
 
     .navBar {
       .nav-link {

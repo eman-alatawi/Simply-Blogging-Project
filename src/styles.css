@@ -373,7 +373,7 @@ body {
 
 @media (max-width: 480px) {
   .header {
-    height: 80vh;
+    height: 90vh;
   }
   .header .navBar .nav-link {
     font-size: large;
@@ -393,7 +393,7 @@ body {
             align-items: center;
   }
   .features-section {
-    height: 130vh;
+    height: 170vh;
   }
   .features-section .features-section-container {
     display: -webkit-box;
@@ -461,10 +461,10 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -ms-flex-pack: distribute;
         justify-content: space-around;
     -webkit-box-align: center;
@@ -496,7 +496,7 @@ body {
     font-size: 2rem;
   }
   .news-section {
-    height: 100vh;
+    height: 130vh;
   }
   .news-section .news-section-container {
     display: -webkit-box;
@@ -519,19 +519,19 @@ body {
   }
   .news-section .news-section-container .striped-Box .container-fluid .card-header-container h1,
   .news-section .news-section-container .striped-Box .container-fluid .card-header-container i {
-    font-size: xx-large;
+    font-size: x-large;
   }
   .news-section .news-section-container .striped-Box .container-fluid .card {
     font-size: large;
   }
   .news-section .news-section-container .striped-Box .container-fluid .card h4 {
-    font-size: x-large;
+    font-size: larger;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .header {
-    height: 80vh;
+    height: 100vh;
   }
   .header .navBar .nav-link {
     font-size: x-large;
