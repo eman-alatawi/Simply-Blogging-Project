@@ -43,12 +43,15 @@ Blog that provide web development tips.
 - SCSS
 - swal(sweetalert)
 - GitHub
+- gh-pages
 - Visual Studio Code
 - Live Server
 - Live Sass Compiler
 
 ## App Screenshot:
-<img src="https://drive.google.com/uc?export=view&id=1GCOKNBYS5yvWkW9H8yxauztkvO_7cuOK" width="400">
+
+
+![website](https://drive.google.com/uc?export=view&id=1GCOKNBYS5yvWkW9H8yxauztkvO_7cuOK)
 
 
 ## Planning/Development process and problem-solving strategy:
