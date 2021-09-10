@@ -124,6 +124,25 @@ body {
 
 // styles for devices with => 1024px
 
+#btnScrollToUp{
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 50%;
+    background-color: $cyne;
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    color: whitesmoke;
+    outline: none;
+    cursor: pointer;
+
+    &:active{
+        background-color: rgb(54, 157, 201);
+    }
+}
+
 .header {
   @include flexContent(column, space-around);
   height: $height;

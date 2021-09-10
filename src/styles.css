@@ -9,6 +9,26 @@ body {
   font-family: "Rajdhani", sans-serif !important;
 }
 
+#btnScrollToUp {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 50%;
+  background-color: #5dcefe;
+  border: none;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  color: whitesmoke;
+  outline: none;
+  cursor: pointer;
+}
+
+#btnScrollToUp:active {
+  background-color: #369dc9;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;

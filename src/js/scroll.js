@@ -44,3 +44,9 @@ $(document).ready(function () {
     }
   });
 });
+
+
+$('#btnScrollToUp').click(function(){
+    window.scrollTo(0,0)
+
+})
