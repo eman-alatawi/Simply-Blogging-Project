@@ -43,7 +43,7 @@
             <div>
                 <span class="Str"><span>We</span> Provide</span>
                 <h1>Web Development <sup>Tips</sup></h1>
-                <button id="New-Tip">Share New Tip Now</button>
+                <a href="#New-Tip"><button> Share New Tip Now</button></a>
             </div>
             <img src="images/creative-web-design-1.png" width="60%" />
         </div>
@@ -210,8 +210,29 @@
 
     </div>
 
-    <div class="container-fluid p-5 features-section" id="Features">
+    <div class="container-fluid p-5 newTip-section" id="New-Tip">
+        <div class="form-container position-relative">
+            <h2>Have a tip you like to share?</h2>
+            <form class="w-100">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="auther-name" placeholder="Your name">
+                  </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="article-title" placeholder="Article Title">
+                </div>
+                
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Article description" id="floatingTextarea"></textarea>
+                  </div>
+                  <div class="form-footer">
+                    <button type="submit" class=" ">Share Now</button>
+
+                  </div>
+              </form>
+        </div>
         
+        <img src="images/web-application-development.png" width="55%" />
+
     </div>
 
     <footer class="footer">
