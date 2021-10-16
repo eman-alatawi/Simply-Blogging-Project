@@ -43,7 +43,6 @@ Blog that provide web development tips.
 - SCSS
 - swal(sweetalert)
 - GitHub
-- gh-pages
 - Visual Studio Code
 - Live Server
 - Live Sass Compiler
