@@ -93,41 +93,49 @@ body {
   }
 }
 
-@mixin newTip-section($section-width,$section-height,$header-size, $placeholder-size, $button-size) {
-    .newTip-section{
-        @include flexContent(column, space-between);
-        .form-container {
-            width: $section-width;
-            height: $section-height;
+@mixin newTip-section(
+  $section-width,
+  $section-height,
+  $header-size,
+  $placeholder-size,
+  $button-size
+) {
+  .newTip-section {
+    @include flexContent(column, space-between);
 
-            h2{
-                font-size: $header-size;
-            }
-            form {
-                
-                input,
-                textarea {
-                 
-          
-                  &::placeholder {
-                    font-size: $placeholder-size;
-                  }
-                }
-                .form-footer {
-                    button{
-                        font-size:  $button-size;
-                    }
-                }
-            }
+    .form-container {
+      width: $section-width;
+      height: $section-height;
+
+      h2 {
+        font-size: $header-size;
+      }
+
+      form {
+        input,
+        textarea {
+          &::placeholder {
+            font-size: $placeholder-size;
+          }
         }
+
+        .form-footer {
+          @include flexContent(column, center);
+
+          button {
+            font-size: $button-size;
+          }
+        }
+      }
     }
+  }
 }
 
 @mixin x-small-devices {
   @include header-section(90vh, large, column, space-around);
-  @include features-section(170vh);
+  @include features-section(145vh);
   @include news-section(110vh, larger, large, small);
-  @include newTip-section(100%, 50%,large, medium, medium);
+  @include newTip-section(100%, 50%, large, medium, medium);
 }
 
 @mixin small-devices {
@@ -149,13 +157,24 @@ body {
   }
 
   .features-section {
+    height: 80vh;
+
     .feature-paragraph {
       width: 80vw;
     }
   }
 
-  @include newTip-section(100%, 100%, xx-large, large,large);
+  .news-section {
+    .news-section-container {
+      .striped-Box {
+        .container-fluid {
+          height: 30vh;
+        }
+      }
+    }
+  }
 
+  @include newTip-section(100%, 100%, xx-large, large, large);
 }
 
 // styles for devices with => 1024px

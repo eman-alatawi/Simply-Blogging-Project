@@ -511,7 +511,7 @@ body {
             align-items: center;
   }
   .features-section {
-    height: 170vh;
+    height: 145vh;
   }
   .features-section .features-section-container {
     display: -webkit-box;
@@ -603,6 +603,21 @@ body {
   .newTip-section .form-container form input::placeholder,
   .newTip-section .form-container form textarea::placeholder {
     font-size: medium;
+  }
+  .newTip-section .form-container form .form-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .newTip-section .form-container form .form-footer button {
     font-size: medium;
@@ -724,6 +739,21 @@ body {
   .newTip-section .form-container form textarea::placeholder {
     font-size: large;
   }
+  .newTip-section .form-container form .form-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .newTip-section .form-container form .form-footer button {
     font-size: large;
   }
@@ -736,8 +766,14 @@ body {
   .header .navBar .nav-link {
     font-size: x-large;
   }
+  .features-section {
+    height: 80vh;
+  }
   .features-section .feature-paragraph {
     width: 80vw;
+  }
+  .news-section .news-section-container .striped-Box .container-fluid {
+    height: 30vh;
   }
   .newTip-section {
     display: -webkit-box;
@@ -776,6 +812,21 @@ body {
   .newTip-section .form-container form input::placeholder,
   .newTip-section .form-container form textarea::placeholder {
     font-size: large;
+  }
+  .newTip-section .form-container form .form-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .newTip-section .form-container form .form-footer button {
     font-size: large;
