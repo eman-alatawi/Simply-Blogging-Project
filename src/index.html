@@ -102,13 +102,15 @@
                         </div>
                     </div>
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner w-100">
+                        <div class="carousel-inner w-100" id="carouselInner">
                             <div class="carousel-item active">
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">Fun Times Styling Checkbox States</h4>
                                         <p class="card-text">
-                                            Although designing checkboxes is not that complicated, we also don’t have to settle for simple background color changes, or adding and removing borders, to indicate state changes.
+                                            Although designing checkboxes is not that complicated, we also don’t have to
+                                            settle for simple background color changes, or adding and removing borders,
+                                            to indicate state changes.
                                         </p>
                                         <p class="card-text">
                                             <small class="cus-text-muted">Author: Preethi </small>
@@ -119,23 +121,25 @@
                             <div class="carousel-item">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">What I Wish I Knew About CSS When Starting Out As A Front-Ender</h4>
+                                        <h4 class="card-title">What I Wish I Knew About CSS When Starting Out As A
+                                            Front-Ender</h4>
                                         <p class="card-text">
-                                            Reflecting back on this time, I think there are a few key concepts that were vital to things finally all making sense and fitting together. These were:
+                                            Reflecting back on this time, I think there are a few key concepts that were
+                                            vital to things finally all making sense and fitting together. These were:
 
-                                            <ul>
-                                                <li>The Box Model (e.g. box-sizing, height, width, margin, padding)</li>
-                                                <li>Layout (e.g. display)</li>
-                                            </ul>
-                                           
+                                        <ul>
+                                            <li>The Box Model (e.g. box-sizing, height, width, margin, padding)</li>
+                                            <li>Layout (e.g. display)</li>
+                                        </ul>
+
                                         </p>
                                         <p class="card-text">
-                                            <small class="cus-text-muted">Author: Chris Coyier  </small>
+                                            <small class="cus-text-muted">Author: Chris Coyier </small>
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -159,7 +163,9 @@
                         id="article-description"></textarea>
                 </div>
                 <div class="form-footer">
-                    <button type="submit" onclick="clickHandler()">Share Now</button>
+                    <button type="button" onclick="clickHandler()">Share Now</button>
+                    <button type="reset">Reset</button>
+
                 </div>
             </form>
         </div>
@@ -197,66 +203,85 @@
     <script src="./js/scroll.js"></script>
     <script>
         let myCarousel;
-        let articles = [];
+        // var articles = [];
+        var articles = JSON.parse(localStorage.getItem("articles")) || [];
+
+        if (articles.length) {
+            initListOfArticles(articles)
+
+        }
+
         function createNewCard(article) {
-            console.log('in createNewCard' + article.articleTitle, article.articleDescription)
+            var carouselInner = document.getElementById('carouselInner')
+            carouselInner.innerHTML += `
+           <div class="carousel-item ">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">${article.articleTitle}</h4>
+                        <p class="card-text">
+                            ${article.articleDescription}
+                        </p>
+                        <p class="card-text">
+                            <small class="cus-text-muted">Author: ${article.authorName} </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+           `
 
-            let carouselInner = document.querySelector(".carousel-inner");
+            initListOfArticles(articles);
 
-            let carouselItem = document.createElement("div");
-            carouselItem.className = "carousel-item";
-
-            let card = document.createElement("div");
-            card.className = "card";
-
-            let cardBody = document.createElement("div");
-            cardBody.className = "card-body";
-
-            let title = document.createElement("h4");
-            title.innerText = article.articleTitle;
-            title.className = "card-title";
-
-            let text = document.createElement("p");
-            text.className = "card-text";
-
-            let paragraph = document.createElement("p");
-            paragraph.innerText = article.description;
-
-            let footerParagraph = document.createElement("p");
-            footerParagraph.innerText = `Author: ${article.authorName}`;
-            footerParagraph.className = "cus-text-muted";
-
-            cardBody.appendChild(title);
-            text.appendChild(paragraph);
-            text.appendChild(footerParagraph);
-            cardBody.appendChild(text);
-            card.appendChild(cardBody);
-            carouselItem.appendChild(card);
-            carouselInner.appendChild(carouselItem);
-            myCarousel.appendChild(carouselInner);
-
-            Swal.fire('Thank You!', 'Article added in the Latest News', 'success')
         }
         function clickHandler() {
             const authorName = document.getElementById("auther-name").value;
             const articleTitle = document.getElementById("article-title").value;
-            const articleDescription = document.getElementById(
-                "article-description"
-            ).value;
+            const articleDescription = document.getElementById("article-description").value;
 
-            let newArticle = {};
-            newArticle.articleTitle = articleTitle;
-            newArticle.description = articleDescription;
-            newArticle.authorName = authorName;
-            console.log(newArticle);
+            if (!authorName.length || !articleTitle.length || !articleDescription.length) {
+                Swal.fire(
+                    'Missing',
+                    "some feilds are empty",
+                    'warning'
+                )
 
-            articles.push(newArticle);
-            console.log(articles);
+            } else {
+                let newArticle = {
+                    authorName,
+                    articleTitle,
+                    articleDescription
 
-            initListOfArticles();
+                };
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "Are you want to add this new Tip? You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, Add it!",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        articles.push(newArticle);
+                        const local = localStorage.setItem(
+                            "articles",
+                            JSON.stringify(articles)
+                        );
+
+                        Swal.fire(
+                            'Thank You!',
+                            'Article added in the Latest News',
+                            'success'
+                        )
+                    }
+                });
+
+                createNewCard(newArticle)
+
+            }
         }
 
-        let initListOfArticles = () => {
+        function initListOfArticles(articles) {
             if (myCarousel) {
                 document.getElementById("myCarousel").replaceWith(myCarousel);
                 return;
